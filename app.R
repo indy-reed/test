@@ -185,7 +185,26 @@ ui <- fluidPage(
 )
 
 # Define the Shiny server function
-server <- function(input, output) {}
+server <- function(input, output) {
+  # Payment data
+  payment_data <- reactive({
+    create_payment_schedule(
+      p = 2e5,
+      r = 0.03,
+      i = 0.02,
+      a = 0.04,
+      ptr = 0.04,
+      hir = 0.03,
+      # p = input$home_price_slider,
+      # r = 0.01 * input$interest_rate_slider,
+      # i = 0.01 * input$inflation_rate_slider,
+      # a = 0.01 * input$appreciation_rate_slider,
+      # ptr = 0.01 * input$tax_rate_slider,
+      # hir = 0.01 * input$insurance_slider,
+      n = term
+    )
+  })
+}
 
 # Create the Shiny app
 shinyApp(ui = ui, server = server)
