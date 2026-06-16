@@ -179,12 +179,9 @@ create_payment_schedule <- function(p, r, i, a, ptr, hir, n) {
 term <- 30
 
 # Define the Shiny UI layout
-ui <- page_sidebar(
-  # Add github link (removed for connect cloud)
-  # ribbon_css("https://github.com/rstudio/demo-co/tree/main/evals-analysis-app"),
-
-  # Add title
-  title = "Effectiveness of DemoCo App Free Trial by Customer Segment",
+ui <- fluidPage(
+  # Application title
+  titlePanel("To own or not to own")
 )
 
 # Define the Shiny server function
